@@ -167,7 +167,8 @@ a {
   height: 100%;
 }
 
-.drawer {
+//КОРЗИНА
+.cart {
   position: absolute;
   width: 385px;
   height: 100%;
@@ -175,11 +176,94 @@ a {
   padding: 30px;
   background: #fff;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-  &__title{
+  display: flex;
+  flex-direction: column;
+  
+
+  &__top {
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & img {
+      opacity: 0.5;
+      transition: opacity 0.15 ease-in-out;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+
+      }
+    }
   }
 
+  &-items {
+    flex: 1;
+    overflow: auto;
+    margin-bottom: 40px;
+    padding-right: 5px;
+  }
+
+  &__total {
+    margin-bottom: 40px;
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+
+    }
+ 
+    &-dashed {
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed #dfdfdf;
+      position: relative;
+      top: -4px;
+      margin: 0 7px;
+    }
+
+    &-button {
+      width: 100%;
+      background-color: #9DD458;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      height: 55px;
+      cursor: pointer;
+      transition: background 0.2 ease-in-out;
+      position: relative;
+
+      & img {
+        position: absolute;
+        top: 21px;
+        right: 40px;
+
+      }
+
+      &:hover {
+        background: lighten($color: #9DD458, $amount: 5%);
+
+        & img {
+          transform: translateX(5px);
+        }
+
+      }
+
+      &:active {
+        background: darken($color: #9DD458, $amount: 5%);
+      }
+
+    }
+
+
+  }
+  
+
+
 }
+
 
 //КАРТОЧКА В КОРЗИНЕ
 .cart-item {
@@ -189,12 +273,13 @@ a {
   border: 1px solid #F3F3F3;
   border-radius: 20px;
   margin-bottom: 20px;
- 
-  &__img{
+
+  &__img {
     padding-left: 20px;
-  
+
   }
-  &__col{
+
+  &__col {
     padding: 20px 0;
   }
 
@@ -202,16 +287,18 @@ a {
     font-size: 14px;
     width: 150px;
     margin-bottom: 8px;
-    
+
   }
-  &__remove{
+
+  &__remove {
     padding-right: 20px;
     opacity: 0.5;
     transition: opacity 0.15 ease-in-out;
-     cursor: pointer;
-    &:hover{
+    cursor: pointer;
+
+    &:hover {
       opacity: 1;
-     
+
     }
   }
 
