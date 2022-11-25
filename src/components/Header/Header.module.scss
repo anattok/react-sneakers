@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    border-bottom: 1px solid #EAEAEA;
+  
+    &__title {
+      margin-left: 30px;
+    }
+  
+    &__subtitle {
+      margin-left: 30px;
+      opacity: 0.5;
+    }
+  
+    &__left {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    &__right {
+      display: flex;
+      justify-content: space-between;
+  
+      & span {
+        margin-left: 20px;
+      }
+  
+      & li {
+        margin-right: 40px;
+      }
+    }
+  
+  }
